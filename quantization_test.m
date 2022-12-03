@@ -40,20 +40,18 @@ end
 n
 
 %% TESTING RESULTS
-
 clear all;
+figure,
 
 simOut = sim("DC2_predistortion.slx");
 
-%x = get(simOut,x);
 x = simOut.x.Data;
-
 x = x((2*end/3):end);
+
 
 x_amp = simOut.x_amp.Data;
 x_amp = x_amp((2*end/3):end);
-%x_amp = get(simOut,x_amp);
 
-% figure,
+
 hold on;
 scatter(abs(x),abs(x_amp));
