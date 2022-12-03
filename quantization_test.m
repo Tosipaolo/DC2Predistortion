@@ -1,18 +1,21 @@
-N=30;
+numberofCoefficients=30;
 
-input_interval = 1/N;
+inputTreshold = 1/numberofCoefficients;
 
-%% A CREATION
+%% A CREATIOnumberofCoefficients
+numberofCoefficients=30;
+inputTreshold = 1/numberofCoefficients;
 
-x_axis = 0:input_interval:1;
+
+x_axis = 0:inputTreshold:1;
 
 y = zeros(size(x_axis));
 
-for j=1:1:N+1
-    y(j) = (j+1)^6 - 1;
+for j=1:1:numberofCoefficients+1
+    y(j) = ((j*inputTreshold+1)^6) -1;
 end
 
-y;
+y
 %figure("A_vector");
 plot(x_axis,y, "x");
 
@@ -20,9 +23,9 @@ plot(x_axis,y, "x");
 
 x = 0.04
 
-for i= 1:1:N+1    
-    if ( abs(x) > (i-1)*input_interval  ) && ( abs(x) <= (i)*input_interval )
-        if (abs(x) - (i-1)*input_interval) < abs(abs(x) - (i)*input_interval)
+for i= 1:1:numberofCoefficients+1    
+    if ( abs(x) > (i-1)*inputTreshold  ) && ( abs(x) <= (i)*inputTreshold )
+        if (abs(x) - (i-1)*inputTreshold) < abs(abs(x) - (i)*inputTreshold)
             %if (i ==1)
             %    n=1;
             %end
